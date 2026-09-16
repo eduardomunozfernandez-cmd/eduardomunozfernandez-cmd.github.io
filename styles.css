@@ -1,0 +1,659 @@
+/* =========================================================
+   Eduardo Muñoz — Portfolio
+   Palette: white background, brilliant red accent
+   ========================================================= */
+
+:root {
+  --red: #e8001d;
+  --black: #0a0a0a;
+  --ink: #111111;
+  --muted: #6b6b6b;
+  --line: #e6e6e6;
+  --bg: #ffffff;
+
+  --container: 1180px;
+  --pad: clamp(20px, 5vw, 64px);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+::selection { background: var(--red); color: #fff; }
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-left: var(--pad);
+  padding-right: var(--pad);
+}
+
+section [id],
+main [id] { scroll-margin-top: 90px; }
+#work, #about, #contact, #brands { scroll-margin-top: 90px; }
+
+/* =========================================================
+   HEADER / NAV
+   ========================================================= */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.site-header.scrolled {
+  border-bottom-color: var(--line);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.brand-mark {
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 40px);
+}
+
+.nav {
+  display: flex;
+  gap: clamp(20px, 3vw, 44px);
+}
+
+/* "Contact me" pill — hidden at the top, appears once you scroll down */
+.header-cta {
+  display: none;
+  align-items: center;
+  background: var(--red);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+  padding: 9px 20px;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: background-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.site-header.show-cta .header-cta {
+  display: inline-flex;
+  animation: ctaIn 0.32s var(--ease);
+}
+/* once the pill is visible, drop the duplicate "Contact" nav link */
+.site-header.show-cta .nav-contact { display: none; }
+.header-cta:hover { background: #c40019; transform: translateY(-2px); }
+
+@keyframes ctaIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: none; }
+}
+.nav a {
+  font-weight: 600;
+  font-size: 0.98rem;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.2s var(--ease);
+}
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 2px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease);
+}
+.nav a:hover { color: var(--red); }
+.nav a:hover::after { transform: scaleX(1); }
+
+/* Language switch — dark pill; each circle IS the flag (no emoji, no blank knob) */
+.lang-toggle {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 52px;
+  height: 26px;
+  padding: 0 4px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.lang-toggle-flag {
+  display: flex;
+  border-radius: 50%;
+  opacity: 0.45;
+  transform: scale(0.86);
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.lang-toggle-flag svg { display: block; border-radius: 50%; }
+.lang-toggle[aria-checked="false"] .lang-toggle-flag--uk,
+.lang-toggle[aria-checked="true"] .lang-toggle-flag--es {
+  opacity: 1;
+  transform: scale(1.05);
+  box-shadow: 0 0 0 2px #fff, 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* mobile toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 8px;
+}
+.nav-toggle span {
+  width: 24px; height: 2px;
+  background: var(--ink);
+  transition: transform 0.3s var(--ease), opacity 0.2s var(--ease);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  padding: 8px var(--pad) 24px;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+.mobile-nav a {
+  padding: 14px 0;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+  border-bottom: 1px solid var(--line);
+}
+.mobile-nav.open { display: flex; }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  padding-top: clamp(130px, 22vh, 220px);
+  padding-bottom: clamp(70px, 14vh, 150px);
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-kicker {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: clamp(0.72rem, 1.4vw, 0.9rem);
+  color: var(--red);
+  margin-bottom: clamp(18px, 3vw, 30px);
+}
+
+.hero-title {
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 0.92;
+  font-size: clamp(3.4rem, 14vw, 9.5rem);
+  margin-bottom: clamp(26px, 5vw, 48px);
+}
+
+.hero-phrase {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.4rem, 3.6vw, 2.6rem);
+  max-width: 16ch;
+  line-height: 1.15;
+  margin-bottom: clamp(32px, 5vw, 52px);
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 15px 30px;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  transition: transform 0.25s var(--ease), background-color 0.25s var(--ease),
+              color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.btn-primary {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+.btn-primary:hover { transform: translateY(-3px); background: #c40019; border-color: #c40019; }
+.btn-ghost:hover { transform: translateY(-3px); background: var(--ink); color: #fff; }
+.btn svg { flex-shrink: 0; }
+
+/* =========================================================
+   SECTION LABEL
+   ========================================================= */
+.section-label {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  margin-bottom: clamp(40px, 7vw, 80px);
+}
+.section-label-num {
+  font-size: clamp(0.8rem, 1.6vw, 1rem);
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: 0.1em;
+}
+
+/* =========================================================
+   WORK / CASE STUDIES
+   ========================================================= */
+.work { padding: clamp(48px, 7vh, 88px) 0 clamp(32px, 5vh, 56px); }
+
+.case {
+  padding: clamp(38px, 6vw, 64px) 0;
+  border-top: 1px solid var(--line);
+}
+.case:last-child { border-bottom: 1px solid var(--line); }
+
+.case-head {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.4vw, 28px);
+  margin-bottom: clamp(18px, 3vw, 28px);
+}
+
+.case-logo {
+  height: clamp(30px, 4vw, 52px);
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.case-name {
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  font-size: clamp(2.6rem, 8vw, 5.5rem);
+  transition: color 0.3s var(--ease);
+}
+.case:hover .case-name { color: var(--red); }
+
+.case-desc {
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-weight: 500;
+  max-width: 60ch;
+  color: var(--ink);
+  margin-bottom: clamp(24px, 4vw, 40px);
+}
+
+.case-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(10px, 1.6vw, 18px);
+  max-width: 720px;
+  margin-bottom: clamp(28px, 4.5vw, 44px);
+}
+.case-gallery img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+  transition: transform 0.4s var(--ease);
+}
+.case-gallery img:hover { transform: scale(1.02); }
+
+/* Each trio gets an aspect ratio matched to its own reference photo, so all
+   three fill edge-to-edge (no side letterboxing) and crop as little — and as
+   evenly — as possible, ending up the same height as each other. */
+.case-gallery--manteigaria img { aspect-ratio: 0.925; }
+/* this one crops from the sides — anchor right so the card's text (already
+   tight against the photo's own right edge) never loses more than the source. */
+.case-gallery--manteigaria img:nth-child(1) { object-position: right center; }
+.case-gallery--haagen img { aspect-ratio: 0.85; }
+.case-gallery--legado img { aspect-ratio: 0.99; }
+
+/* Mobile: three photos side by side get too narrow to read — show the
+   first two (already tuned above) and drop the third. */
+@media (max-width: 640px) {
+  .case-gallery { grid-template-columns: 1fr 1fr; }
+  .case-gallery img:nth-child(3) { display: none; }
+}
+
+.metrics {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: clamp(20px, 3vw, 40px);
+  border-top: 2px solid var(--ink);
+  padding-top: clamp(20px, 3vw, 32px);
+}
+.metrics li { display: flex; flex-direction: column; gap: 6px; }
+.metric-value {
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  font-size: clamp(1.8rem, 4vw, 2.9rem);
+  color: var(--red);
+  line-height: 1;
+}
+.metric-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Liberty Express + Vezzo: same tier, deliberately lower-key than the featured three */
+.case-secondary-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  padding: clamp(38px, 6vw, 64px) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.case--secondary { padding: 0; border: 0; }
+.case--secondary .case-head { gap: 12px; margin-bottom: 14px; }
+.case--secondary .case-logo { height: clamp(24px, 3vw, 34px); max-width: 110px; }
+.case--secondary .case-name { font-size: clamp(1.5rem, 3.2vw, 2.2rem); }
+.case--secondary .case-desc {
+  font-size: clamp(0.92rem, 1.5vw, 1.05rem);
+  margin-bottom: clamp(16px, 2.4vw, 24px);
+  max-width: 46ch;
+}
+.case--secondary .metrics {
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: clamp(14px, 2vw, 24px);
+  border-top-width: 1px;
+  padding-top: clamp(14px, 2vw, 20px);
+}
+.case--secondary .metric-value { font-size: clamp(1.25rem, 2.4vw, 1.7rem); }
+.case--secondary .metric-label { font-size: 0.76rem; }
+
+/* =========================================================
+   BRANDS
+   ========================================================= */
+.brands {
+  padding: clamp(70px, 12vh, 140px) 0 clamp(40px, 6vh, 72px);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.brands-count {
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-size: clamp(2rem, 6vw, 3.6rem);
+  max-width: 18ch;
+  margin: clamp(40px, 6vw, 68px) 0 0;
+}
+.brands-count strong { color: var(--red); font-weight: 900; }
+
+/* Three explicit rows: two featured rows (3 + 2 logos) then everyone else, less prominent */
+.brands-logos {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 5vw, 48px);
+}
+.brand-cloud--rest {
+  padding-top: clamp(8px, 2vw, 16px);
+  border-top: 1px solid var(--line);
+}
+
+/* Logo cloud — no grid, no borders, full color, size tiers, centered rather than left-hugging */
+.brand-cloud {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  row-gap: clamp(28px, 5vw, 52px);
+  column-gap: clamp(36px, 6vw, 72px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 0.25s var(--ease);
+}
+.brand:hover { transform: scale(1.05); }
+
+.brand img {
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* top priority, most prominent: Solán, Häagen-Dazs, Wacom, Salesforce, Legado Ibérico */
+.brand--xl img { height: clamp(60px, 8vw, 96px); max-width: 260px; }
+/* priority logos: Manteigaria, Old El Paso */
+.brand--lg img { height: clamp(46px, 6vw, 74px); max-width: 220px; }
+/* mid-weight: ILUNION, Vezzo, Fundación Balia, Azulmarino — boosted so they read as clearly as the rest */
+.brand--md img { height: clamp(36px, 4.4vw, 56px); max-width: 190px; }
+/* everyone else */
+.brand--sm img { height: clamp(28px, 3.4vw, 42px); max-width: 150px; }
+
+/* fallback text label when a logo PNG is missing */
+.brand span {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  display: none;
+}
+.brand--xl span { font-size: clamp(1.3rem, 2.8vw, 1.7rem); }
+.brand--lg span { font-size: clamp(1.05rem, 2vw, 1.35rem); }
+.brand--md span { font-size: clamp(0.95rem, 1.6vw, 1.15rem); }
+.brand--sm span { font-size: clamp(0.85rem, 1.3vw, 1rem); }
+.brand img.missing { display: none; }
+.brand img.missing + span { display: block; }
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+.about { padding: clamp(40px, 6vh, 72px) 0 clamp(70px, 12vh, 140px); }
+
+.about .section-label { margin-bottom: clamp(16px, 3vw, 26px); }
+
+.about-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: clamp(30px, 5vw, 48px);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+.about-location svg { color: var(--red); flex-shrink: 0; }
+
+.about-body {
+  max-width: 62ch;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 3vw, 26px);
+}
+.about-body p {
+  font-size: clamp(1.1rem, 2.1vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
+}
+
+.skills {
+  margin-top: clamp(48px, 8vw, 90px);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(32px, 5vw, 64px);
+}
+.skill-group h4 {
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--ink);
+}
+.skill-group ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.skill-group li {
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+.skill-group li:hover { border-color: var(--red); color: var(--red); }
+
+.skills-note {
+  margin-top: 14px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+.contact {
+  padding: clamp(80px, 16vh, 180px) 0;
+  border-top: 1px solid var(--line);
+  background: var(--ink);
+  color: #fff;
+}
+.contact ::selection { background: #fff; color: var(--ink); }
+
+.contact-title {
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 0.92;
+  font-size: clamp(3rem, 12vw, 8rem);
+  margin-bottom: clamp(24px, 4vw, 40px);
+}
+.contact-lead {
+  font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+  font-weight: 500;
+  color: #bdbdbd;
+  margin-bottom: clamp(40px, 7vw, 72px);
+  max-width: 40ch;
+}
+
+.contact-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
+  gap: 14px;
+  max-width: 680px;
+}
+.contact-actions .btn { width: 100%; padding: 17px 22px; }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.site-footer {
+  background: var(--ink);
+  color: #8a8a8a;
+  padding: 28px 0 40px;
+  border-top: 1px solid #333;
+}
+.site-footer .container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 860px) {
+  .nav { display: none; }
+  .nav-toggle { display: flex; }
+  .skills { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .case-secondary-group { grid-template-columns: 1fr; gap: clamp(32px, 8vw, 48px); }
+  .case-secondary-group .case--secondary + .case--secondary {
+    padding-top: clamp(32px, 8vw, 48px);
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-ctas .btn { flex: 1 1 auto; }
+  .brand-mark { font-size: 0.95rem; }
+  .header-cta { padding: 8px 14px; font-size: 0.82rem; }
+  .header-right { gap: 12px; }
+  .brand-cloud { column-gap: 28px; row-gap: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { transition-duration: 0.001s !important; animation-duration: 0.001s !important; }
+}

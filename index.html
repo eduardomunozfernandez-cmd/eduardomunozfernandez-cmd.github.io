@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Eduardo Muñoz — Marketing Data Strategist</title>
+<meta name="description" content="Marketing Data Strategist. I turn data into decisions that grow brands." />
+<meta name="theme-color" content="#ffffff" />
+
+<meta property="og:title" content="Eduardo Muñoz — Marketing Data Strategist" />
+<meta property="og:description" content="I turn data into decisions that grow brands." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#top" class="brand-mark">Eduardo Muñoz</a>
+
+    <div class="header-right">
+      <nav class="nav" aria-label="Primary">
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#contact" class="nav-contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="header-cta" data-i18n="nav.contactCta">Contact me</a>
+
+      <button class="lang-toggle" id="langToggle" type="button" role="switch" aria-checked="false" aria-label="Switch language between English and Spanish">
+        <span class="lang-toggle-flag lang-toggle-flag--uk" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18">
+            <clipPath id="langFlagClipUK"><circle cx="12" cy="12" r="12" /></clipPath>
+            <g clip-path="url(#langFlagClipUK)">
+              <rect width="24" height="24" fill="#00247d" />
+              <path d="M0,0 L24,24" stroke="#fff" stroke-width="6" />
+              <path d="M24,0 L0,24" stroke="#fff" stroke-width="6" />
+              <path d="M0,0 L24,24" stroke="#cf142b" stroke-width="2.4" />
+              <path d="M24,0 L0,24" stroke="#cf142b" stroke-width="2.4" />
+              <rect x="0" y="9.6" width="24" height="4.8" fill="#fff" />
+              <rect x="9.6" y="0" width="4.8" height="24" fill="#fff" />
+              <rect x="0" y="10.8" width="24" height="2.4" fill="#cf142b" />
+              <rect x="10.8" y="0" width="2.4" height="24" fill="#cf142b" />
+            </g>
+          </svg>
+        </span>
+        <span class="lang-toggle-flag lang-toggle-flag--es" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18">
+            <clipPath id="langFlagClipES"><circle cx="12" cy="12" r="12" /></clipPath>
+            <g clip-path="url(#langFlagClipES)">
+              <rect width="24" height="24" fill="#c60b1e" />
+              <rect y="6" width="24" height="12" fill="#ffc400" />
+            </g>
+          </svg>
+        </span>
+      </button>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="#work" data-i18n="nav.work">Work</a>
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- 1. HERO -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <p class="hero-kicker reveal" data-i18n="hero.kicker">Marketing Data Strategist</p>
+      <h1 class="hero-title reveal">Eduardo<br />Muñoz</h1>
+      <p class="hero-phrase reveal" data-i18n="hero.phrase">I turn data into decisions that grow brands.</p>
+      <div class="hero-ctas reveal">
+        <a href="#work" class="btn btn-primary" data-i18n="hero.cta1">See my work</a>
+        <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. BRANDS -->
+  <section class="brands" id="brands">
+    <div class="container">
+      <h2 class="section-label reveal"><span class="section-label-num">01</span> <span data-i18n="brands.heading">Brands I've worked with</span></h2>
+
+      <div class="brands-logos reveal">
+        <ul class="brand-cloud brand-cloud--featured">
+          <li class="brand brand--xl"><img src="assets/logos/solan-de-cabras.png" alt="Solán de Cabras" /><span>Solán de Cabras</span></li>
+          <li class="brand brand--xl"><img src="assets/logos/haagen-dazs.png" alt="Häagen-Dazs" /><span>Häagen-Dazs</span></li>
+          <li class="brand brand--xl"><img src="assets/logos/wacom.png" alt="Wacom" /><span>Wacom</span></li>
+        </ul>
+
+        <ul class="brand-cloud brand-cloud--featured">
+          <li class="brand brand--xl"><img src="assets/logos/salesforce.png" alt="Salesforce" /><span>Salesforce</span></li>
+          <li class="brand brand--xl"><img src="assets/logos/legado-iberico.png" alt="Legado Ibérico" /><span>Legado Ibérico</span></li>
+        </ul>
+
+        <ul class="brand-cloud brand-cloud--rest">
+          <li class="brand brand--lg"><img src="assets/logos/manteigaria.png" alt="Manteigaria" /><span>Manteigaria</span></li>
+          <li class="brand brand--lg"><img src="assets/logos/old-el-paso.png" alt="Old El Paso" /><span>Old El Paso</span></li>
+          <li class="brand brand--md"><img src="assets/logos/ilunion-hotels.png" alt="ILUNION Hotels" /><span>ILUNION Hotels</span></li>
+          <li class="brand brand--md"><img src="assets/logos/vezzo.png" alt="Vezzo" /><span>Vezzo</span></li>
+          <li class="brand brand--sm"><img src="assets/logos/liberty-express.png" alt="Liberty Express" /><span>Liberty Express</span></li>
+          <li class="brand brand--md"><img src="assets/logos/azulmarino.png" alt="Azulmarino" /><span>Azulmarino</span></li>
+        </ul>
+      </div>
+
+      <p class="brands-count reveal"><strong>+40</strong> <span data-i18n="brands.count">brands across national and international markets</span></p>
+    </div>
+  </section>
+
+  <!-- 2. WORK -->
+  <section class="work" id="work">
+    <div class="container">
+      <h2 class="section-label reveal"><span class="section-label-num">02</span> <span data-i18n="work.heading">Selected work</span></h2>
+
+      <article class="case reveal">
+        <div class="case-head">
+          <img class="case-logo" src="assets/logos/manteigaria.png" alt="" />
+          <h3 class="case-name">Manteigaria</h3>
+        </div>
+        <p class="case-desc" data-i18n="case.manteigaria.desc">Led the digital strategy from day one for Manteigaria's launch in Spain, building the brand from scratch in a new market, driving the initial launch campaign and supporting 4 subsequent store openings across Madrid.</p>
+        <div class="case-gallery case-gallery--manteigaria">
+          <img src="assets/cases/manteigaria-1.jpg" alt="Manteigaria pastel de nata pastry campaign" loading="lazy" />
+          <img src="assets/cases/manteigaria-2.jpg" alt="Manteigaria &quot;Da igual dónde naces, madrileño también te haces&quot; campaign" loading="lazy" />
+          <img src="assets/cases/manteigaria-3.jpg" alt="Manteigaria picnic with pastéis de nata" loading="lazy" />
+        </div>
+        <ul class="metrics">
+          <li><span class="metric-value">+2,600</span><span class="metric-label" data-i18n="m.manteigaria.reviews">reviews</span></li>
+          <li><span class="metric-value">4.8</span><span class="metric-label" data-i18n="m.manteigaria.rating">rating</span></li>
+          <li><span class="metric-value">+1.23M</span><span class="metric-label" data-i18n="m.manteigaria.reach">reach</span></li>
+          <li><span class="metric-value">+2.18M</span><span class="metric-label" data-i18n="m.manteigaria.impressionsIG">impressions on Instagram</span></li>
+        </ul>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-head">
+          <img class="case-logo" src="assets/logos/haagen-dazs.png" alt="" />
+          <h3 class="case-name">Häagen-Dazs</h3>
+        </div>
+        <p class="case-desc" data-i18n="case.haagen.desc">Full digital presence management across Spain and Mexico: situational audit of the existing strategy, content and paid media optimization, and end-to-end planning and execution of seasonal campaigns (summer and winter) adapted to each market. Ongoing performance tracking and strategic decision-making throughout the year.</p>
+        <div class="case-gallery case-gallery--haagen">
+          <img src="assets/cases/haagen-dazs-1.jpg" alt="&quot;La Tentación de Jordi Cruz&quot; campaign for Häagen-Dazs" loading="lazy" />
+          <img src="assets/cases/haagen-dazs-2.jpg" alt="Turrón x Häagen-Dazs holiday gift set" loading="lazy" />
+          <img src="assets/cases/haagen-dazs-3.jpg" alt="Häagen-Dazs summer lifestyle campaign" loading="lazy" />
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-head">
+          <img class="case-logo" src="assets/logos/legado-iberico.png" alt="" />
+          <h3 class="case-name">Legado Ibérico</h3>
+        </div>
+        <p class="case-desc" data-i18n="case.legado.desc">Ongoing strategic involvement in Legado Ibérico, continuous performance tracking and data-driven decision-making alongside campaign-specific work spanning high-profile activations such as Madrid Fashion Week sponsorship, the Spanish National Football Team sponsorship and partnerships with key influencers for campaigns like Javier Castillo, Carmen Lomana or Mario Vaquerizo.</p>
+        <div class="case-gallery case-gallery--legado">
+          <img src="assets/cases/legado-iberico-1.jpg" alt="Legado Ibérico brand activation at Mercedes-Benz Fashion Week Madrid" loading="lazy" />
+          <img src="assets/cases/legado-iberico-2.jpg" alt="&quot;Entre Líneas II&quot; campaign video for Legado Ibérico" loading="lazy" />
+          <img src="assets/cases/legado-iberico-3.jpg" alt="Legado Ibérico Spanish National Football Team limited edition packaging" loading="lazy" />
+        </div>
+        <ul class="metrics">
+          <li><span class="metric-value">+566k</span><span class="metric-label" data-i18n="m.legado.reach">reach (+305% above target)</span></li>
+          <li><span class="metric-value">+792k</span><span class="metric-label" data-i18n="m.legado.impressions">impressions (+372% above target)</span></li>
+          <li><span class="metric-value">56.57%</span><span class="metric-label" data-i18n="m.legado.engagement">engagement on reach (+595% above target)</span></li>
+        </ul>
+      </article>
+
+      <div class="case-secondary-group reveal">
+        <article class="case case--secondary">
+          <div class="case-head">
+            <img class="case-logo" src="assets/logos/liberty-express.png" alt="" />
+            <h3 class="case-name">Liberty Express</h3>
+          </div>
+          <p class="case-desc" data-i18n="case.liberty.desc">Multi-country digital strategy across Spain, Portugal, Italy and Germany, including political and social crisis management within the Venezuelan community in Europe.</p>
+          <ul class="metrics">
+            <li><span class="metric-value">+166%</span><span class="metric-label" data-i18n="m.liberty.clicks">clicks (up to)</span></li>
+            <li><span class="metric-value">+146%</span><span class="metric-label" data-i18n="m.liberty.impressionsMarket">impressions per market (up to)</span></li>
+          </ul>
+        </article>
+
+        <article class="case case--secondary">
+          <div class="case-head">
+            <img class="case-logo" src="assets/logos/vezzo.png" alt="" />
+            <h3 class="case-name">Vezzo</h3>
+          </div>
+          <p class="case-desc" data-i18n="case.vezzo.desc">Direction of Vezzo's digital strategy across its national expansion to over 10 locations.</p>
+          <ul class="metrics">
+            <li><span class="metric-value">+6.2M</span><span class="metric-label" data-i18n="m.vezzo.impressions">impressions</span></li>
+            <li><span class="metric-value">+7k</span><span class="metric-label" data-i18n="m.vezzo.followers">followers on Instagram</span></li>
+            <li><span class="metric-value">+4.1M</span><span class="metric-label" data-i18n="m.vezzo.impressionsTikTok">impressions on TikTok</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-label reveal"><span class="section-label-num">03</span> <span data-i18n="about.heading">About</span></h2>
+
+      <p class="about-location reveal">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+        <span data-i18n="about.location">Madrid, Spain</span>
+      </p>
+
+      <div class="about-body">
+        <p class="reveal" data-i18n="about.p1">Marketing Data Strategist with over 3 years of experience leading growth and brand positioning strategies for more than 40 national and international brands at a strategic marketing agency.</p>
+        <p class="reveal" data-i18n="about.p2">Specialized in turning data into decisions: from KPI definition, market audits and marketing strategies to autonomous account management and paid media campaigns.</p>
+        <p class="reveal" data-i18n="about.p3">My approach combines systemic thinking with a business mindset, I identify opportunities where others see metrics, and prioritize actions with real impact on results.</p>
+        <p class="reveal" data-i18n="about.p4">I currently apply AI tools (Claude, Claude Code, Windsor.ai) to automate operational processes such as reporting, information research and lead management.</p>
+        <p class="reveal" data-i18n="about.p5">Based in Madrid and looking to bring this strategic expertise to a brand-side role where strategy, data and business go hand in hand.</p>
+      </div>
+
+      <div class="skills reveal">
+        <div class="skill-group">
+          <h4 data-i18n="about.skillsHeading1">Marketing &amp; Strategy</h4>
+          <ul>
+            <li data-i18n="skill.brandStrategy">Brand Strategy</li><li data-i18n="skill.kpis">KPIs</li><li data-i18n="skill.marketAudits">Market Audits</li><li data-i18n="skill.consumerInsights">Consumer Insights</li>
+            <li data-i18n="skill.campaignPlanning">Campaign Planning</li><li data-i18n="skill.dataDriven">Data-driven Decision Making</li><li data-i18n="skill.paidMedia">Paid Media</li>
+            <li data-i18n="skill.multiMarket">Multi-market Strategy</li><li data-i18n="skill.crisisManagement">Crisis Management</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4 data-i18n="about.skillsHeading2">Data &amp; Tools</h4>
+          <ul>
+            <li>GA4</li><li>Looker Studio</li><li>Meta Ads</li><li>TikTok Ads</li><li>Metricool</li>
+            <li>Excel</li><li>Claude</li><li>Claude Code</li><li>Windsor.ai</li>
+          </ul>
+          <p class="skills-note" data-i18n="about.note">*This website was built entirely by me using Claude Code.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="contact-title reveal"><span data-i18n="contact.title1">Let's work</span><br /><span data-i18n="contact.title2">together.</span></h2>
+      <p class="contact-lead reveal" data-i18n="contact.lead">Open to brand-side roles in fashion, sport and retail.</p>
+
+      <div class="contact-actions reveal">
+        <a href="mailto:eduardomunozfernandez@gmail.com" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m2 7 10 6 10-6" />
+          </svg>
+          <span data-i18n="contact.email">Email</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/eduardo-mu%C3%B1oz-fernandez-8b296a19a/" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z" />
+          </svg>
+          <span data-i18n="contact.linkedin">LinkedIn</span>
+        </a>
+
+        <a href="tel:+34618595976" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <span data-i18n="contact.call">Call</span>
+        </a>
+
+        <a href="https://wa.me/34618595976" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Zm-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884Zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+          </svg>
+          <span data-i18n="contact.whatsapp">WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Eduardo Muñoz</span>
+    <span>© <span id="year"></span></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
