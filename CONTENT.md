@@ -44,36 +44,65 @@ Old El Paso, ILUNION Hotels, Vezzo, Liberty Express, Azulmarino
 
 **Section label:** 02 · Selected work
 
-### Manteigaria
-Led the digital strategy from day one for Manteigaria's launch in Spain,
-building the brand from scratch in a new market, driving the initial launch
-campaign and supporting 4 subsequent store openings across Madrid.
+### Solán de Cabras
+Strategic involvement in one of Spain's leading water brands, part of the
+Mahou San Miguel group. Work included competitive benchmarking, brand
+positioning tracking based on DAI rankings, campaign and content
+coordination around major sponsorships (La Liga, Real Madrid, Atlético de
+Madrid, Madrid Fashion Week), brand presence and communication around
+Aitana's 2026 tour, and cross-agency coordination to ensure strategic
+alignment across all brand touchpoints.
 
-- +2,600 — reviews
-- 4.8 — rating
-- +1.23M — reach
-- +2.18M — impressions on Instagram
+- 709,450 — total interactions*
+- 50.1M — views*
+- 110.7M — total annual reach*
+
+*Global results across all brand agencies.
+
+### Legado Ibérico — El Pozo Group
+Ongoing strategic involvement in Legado Ibérico, premium ibérico brand of El
+Pozo Group. Continuous performance tracking and data-driven decision-making
+alongside campaign-specific work spanning high-profile activations such as
+Madrid Fashion Week sponsorship, the Spanish National Football Team
+sponsorship, and partnerships with key influencers including Javier
+Castillo, Carmen Lomana and Mario Vaquerizo.
+
+- +12,699 — new followers on Instagram (2025–2026)
+- +14.4M — combined reach (IG + FB)
+- +33.4M — combined impressions (IG + FB)
+- +336k — total interactions (IG + FB)
+- 196% — above impressions target Q1 2026
+- 146% — above interactions target Q2 2026
 
 ### Häagen-Dazs
-Full digital presence management across Spain and Mexico: situational audit
-of the existing strategy, content and paid media optimization, and
-end-to-end planning and execution of seasonal campaigns (summer and winter)
-adapted to each market. Ongoing performance tracking and strategic
-decision-making throughout the year.
+Full digital presence management across Spain and Mexico since 2023:
+situational audit of the existing strategy, content and paid media
+optimization, end-to-end planning and execution of seasonal campaigns
+(summer and winter) adapted to each market, digital activations to drive
+traffic to physical stores, and ongoing performance tracking and strategic
+decision-making throughout the year. Campaign work included collaborations
+with key public figures such as Jordi Cruz and David Muñoz.
 
-*(no metrics for this case)*
+- +28M — combined IG impressions Spain & Mexico (2025–2026)
+- +265k — combined IG interactions Spain & Mexico (2025–2026)
+- +14.3M — TikTok impressions Spain (2025–2026)
+- +85k — clicks to store locator & website Mexico (2026)
+- +31k — directions to physical stores via Google Ads Summer 2026
 
-### Legado Ibérico
-Ongoing strategic involvement in Legado Ibérico, continuous performance
-tracking and data-driven decision-making alongside campaign-specific work
-spanning high-profile activations such as Madrid Fashion Week sponsorship,
-the Spanish National Football Team sponsorship and partnerships with key
-influencers for campaigns like Javier Castillo, Carmen Lomana or Mario
-Vaquerizo.
+### Manteigaria
+Led the digital strategy from day one for Manteigaria's launch in Spain,
+building the brand from scratch in a new market. End-to-end ownership of 4
+store opening campaigns across Madrid, each with a tailored launch plan and
+activation strategy. Managed the brand's digital presence at ARCO art fair,
+and coordinated strategy alignment with Manteigaria's agencies across other
+international markets.
 
-- +566k — reach (+305% above target)
-- +792k — impressions (+372% above target)
-- 56.57% — engagement on reach (+595% above target)
+- +2,600 — Google reviews across 4 locations (rating 4.8+)
+- +7,542 — Instagram follower growth (2025–2026)
+- +5,553 — TikTok follower growth (2025–2026)
+- +3.2M — Instagram reach (2025–2026)
+- +5.7M — Instagram impressions (2025–2026)
+- +4.6M — TikTok views (2025–2026)
 
 ### Liberty Express *(smaller/secondary card, paired with Vezzo)*
 Multi-country digital strategy across Spain, Portugal, Italy and Germany,

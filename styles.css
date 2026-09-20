@@ -332,9 +332,9 @@ main [id] { scroll-margin-top: 90px; }
 
 .case-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: clamp(10px, 1.6vw, 18px);
-  max-width: 720px;
+  max-width: 860px;
   margin-bottom: clamp(28px, 4.5vw, 44px);
 }
 .case-gallery img {
@@ -346,21 +346,26 @@ main [id] { scroll-margin-top: 90px; }
 }
 .case-gallery img:hover { transform: scale(1.02); }
 
-/* Each trio gets an aspect ratio matched to its own reference photo, so all
-   three fill edge-to-edge (no side letterboxing) and crop as little — and as
-   evenly — as possible, ending up the same height as each other. */
+/* Each set of four gets an aspect ratio matched to its own reference photos,
+   so all four fill edge-to-edge (no side letterboxing) and crop as little —
+   and as evenly — as possible, ending up the same height as each other. */
+.case-gallery--solan img { aspect-ratio: 0.82; }
+.case-gallery--legado img { aspect-ratio: 0.99; }
+/* this one crops top/bottom — anchor to the top so the sign and both people
+   stay fully in frame, cropping the table/plate below instead. */
+.case-gallery--legado img:nth-child(4) { object-position: center top; }
+.case-gallery--haagen img { aspect-ratio: 0.85; }
 .case-gallery--manteigaria img { aspect-ratio: 0.925; }
 /* this one crops from the sides — anchor right so the card's text (already
    tight against the photo's own right edge) never loses more than the source. */
 .case-gallery--manteigaria img:nth-child(1) { object-position: right center; }
-.case-gallery--haagen img { aspect-ratio: 0.85; }
-.case-gallery--legado img { aspect-ratio: 0.99; }
 
-/* Mobile: three photos side by side get too narrow to read — show the
-   first two (already tuned above) and drop the third. */
+/* Mobile: four photos side by side get too narrow to read — show the
+   first two (already tuned above) and drop the other two. */
 @media (max-width: 640px) {
   .case-gallery { grid-template-columns: 1fr 1fr; }
-  .case-gallery img:nth-child(3) { display: none; }
+  .case-gallery img:nth-child(3),
+  .case-gallery img:nth-child(4) { display: none; }
 }
 
 .metrics {
@@ -385,6 +390,14 @@ main [id] { scroll-margin-top: 90px; }
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
+}
+
+.case-note {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--muted);
 }
 
 /* Liberty Express + Vezzo: same tier, deliberately lower-key than the featured three */
