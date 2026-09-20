@@ -51,6 +51,15 @@ page between English and Spanish. It's driven entirely by `script.js`:
 - `script.js` has an `I18N` object with `en` and `es` dictionaries keyed the
   same way — edit the strings there to change the copy in either language.
 - The chosen language is remembered per-visitor via `localStorage`.
+- The **Download CV** button also switches — its `href`/`download` name come
+  from `__cvHref` / `__cvFilename` in each language's `I18N` block.
+
+## CV files
+
+`assets/cv/cv-eduardo-munoz-es.pdf` and `cv-eduardo-munoz-en.pdf` are served
+by the "Download CV" button in Contact, matching whichever language is
+active. To update the CV, replace these two files (keep the exact names) —
+no other change needed.
 
 To add a new translatable string: add `data-i18n="some.key"` to the element,
 then add `"some.key"` to both the `en` and `es` blocks in `I18N`.

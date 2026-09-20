@@ -124,8 +124,11 @@
       "contact.linkedin": "LinkedIn",
       "contact.call": "Call",
       "contact.whatsapp": "WhatsApp",
+      "contact.downloadCV": "Download CV",
       __title: "Eduardo Muñoz — Marketing Data Strategist",
       __metaDescription: "Marketing Data Strategist. I turn data into decisions that grow brands.",
+      __cvHref: "assets/cv/cv-eduardo-munoz-en.pdf",
+      __cvFilename: "Eduardo Munoz - CV.pdf",
     },
     es: {
       "nav.work": "Trabajo",
@@ -198,13 +201,17 @@
       "contact.linkedin": "LinkedIn",
       "contact.call": "Llamar",
       "contact.whatsapp": "WhatsApp",
+      "contact.downloadCV": "Descargar CV",
       __title: "Eduardo Muñoz — Estratega de Marketing y Datos",
       __metaDescription: "Estratega de Marketing y Datos. Convierto datos en decisiones que hacen crecer marcas.",
+      __cvHref: "assets/cv/cv-eduardo-munoz-es.pdf",
+      __cvFilename: "Eduardo Muñoz - CV.pdf",
     },
   };
 
   var langToggle = document.getElementById("langToggle");
   var metaDescriptionEl = document.querySelector('meta[name="description"]');
+  var cvDownloadEl = document.getElementById("cvDownload");
 
   var setLanguage = function (lang) {
     var dict = I18N[lang] || I18N.en;
@@ -216,6 +223,10 @@
     if (dict.__title) document.title = dict.__title;
     if (metaDescriptionEl && dict.__metaDescription) {
       metaDescriptionEl.setAttribute("content", dict.__metaDescription);
+    }
+    if (cvDownloadEl && dict.__cvHref) {
+      cvDownloadEl.setAttribute("href", dict.__cvHref);
+      cvDownloadEl.setAttribute("download", dict.__cvFilename || "");
     }
     if (langToggle) {
       langToggle.setAttribute("aria-checked", lang === "es" ? "true" : "false");

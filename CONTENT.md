@@ -170,7 +170,8 @@ Code, Windsor.ai
 
 **Lead:** Open to brand-side roles in fashion, sport and retail.
 
-**Buttons:** Email · LinkedIn · Call · WhatsApp
+**Buttons:** Email · LinkedIn · Call · WhatsApp · Download CV (serves the
+Spanish or English PDF depending on the active language)
 
 ---
 
