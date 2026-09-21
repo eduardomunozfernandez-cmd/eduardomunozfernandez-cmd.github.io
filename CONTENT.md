@@ -162,6 +162,16 @@ Code, Windsor.ai
 **Footnote (small, under Data & Tools):**
 *This website was built entirely by me using Claude Code.
 
+**Skills — Soft Skills** *(visual cards, name + one-line description each):*
+- Strategic thinking — Business vision that goes beyond execution.
+- Data-driven decision making — Applying data rigor to strategic decisions, not just reporting.
+- Adaptability — 3+ years managing 40+ brands across very different sectors.
+- Autonomous work — Running accounts independently, without constant oversight.
+- Cross-team collaboration — Coordinating with agencies, internal teams and partners.
+- Problem solving under pressure — Staying sharp and finding solutions when it matters most.
+- Clear communication — Client presentations, strategy decks and reporting.
+- Proactivity — Automating processes and proposing improvements, unprompted.
+
 ---
 
 ## 5. Contact

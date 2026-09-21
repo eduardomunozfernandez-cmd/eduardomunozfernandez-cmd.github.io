@@ -325,7 +325,6 @@ main [id] { scroll-margin-top: 90px; }
 .case-desc {
   font-size: clamp(1.05rem, 2vw, 1.35rem);
   font-weight: 500;
-  max-width: 60ch;
   color: var(--ink);
   margin-bottom: clamp(24px, 4vw, 40px);
 }
@@ -416,7 +415,6 @@ main [id] { scroll-margin-top: 90px; }
 .case--secondary .case-desc {
   font-size: clamp(0.92rem, 1.5vw, 1.05rem);
   margin-bottom: clamp(16px, 2.4vw, 24px);
-  max-width: 46ch;
 }
 .case--secondary .metrics {
   grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
@@ -526,7 +524,6 @@ main [id] { scroll-margin-top: 90px; }
 .about-location svg { color: var(--red); flex-shrink: 0; }
 
 .about-body {
-  max-width: 62ch;
   display: flex;
   flex-direction: column;
   gap: clamp(18px, 3vw, 26px);
@@ -574,6 +571,37 @@ main [id] { scroll-margin-top: 90px; }
   font-weight: 500;
   font-style: italic;
   color: var(--muted);
+}
+
+.soft-skills { margin-top: clamp(40px, 6vw, 72px); }
+.soft-skills > h4 {
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  margin-bottom: clamp(18px, 3vw, 26px);
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--ink);
+}
+.soft-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(16px, 2.4vw, 24px);
+}
+.soft-skill {
+  padding: 4px 0 4px 16px;
+  border-left: 2px solid var(--red);
+}
+.soft-skill h5 {
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+.soft-skill p {
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--muted);
+  line-height: 1.4;
 }
 
 /* =========================================================
